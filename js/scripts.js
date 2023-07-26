@@ -59,27 +59,6 @@ let pokemonRepository = (function () {
     });
   }
 
-  async function loadList() {
-   
-    try {
-      const response = await fetch(apiUrl);
-      const json = await response.json();
-      json.results.forEach(function (item) {
-        const pokemon = {
-          name: item.name.charAt(0).toUpperCase() + item.name.slice(1),
-          height: item.height,
-          weight: item.weight,
-          detailsUrl: item.url,
-        };
-        add(pokemon);
-       
-      });
-     } catch (e) {
-      console.error(e);
-     }
-   
-  }
-
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function (item) {
       const modalContainer = document.getElementById("modal-container");
