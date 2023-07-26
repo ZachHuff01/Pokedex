@@ -38,7 +38,7 @@ let pokemonRepository = (function () {
     });
   }
 
-  async function loadList() {
+  const loadList = async function loadList() {
    
     try {
       const response = await fetch(apiUrl);
