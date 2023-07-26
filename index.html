@@ -5,9 +5,10 @@
       <meta name="viewport" content="width=device-width">
       <title>Pokedex</title>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <link href="/css/styles.css" rel="stylesheet" type="text/css" />
+      <link href="dist/minified-styles.css" rel="stylesheet" type="text/css" />
     </head>
-
+  <header>
+    <!-- top bar with logo & search bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/index.html">
           <img src="/css/pokemon-logo.png" width="200" height="65" class="d-inline-block align-top" alt="">
@@ -16,13 +17,18 @@
             <span class="navbar-toggler-icon"></span>
           </button>
         <div class="collapse navbar-collapse" id="navbarNav"></div>
+        <form class="form-inline">
+          <input class="search-bar form-control" id="search-bar" type="search" placeholder="Pokemon Name" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
     </nav>
+  </header>
 
-    <div class="row" id="pokemonRow"></div>
-
+  <!-- body showing modal buttons -->
+<div class="row" id="pokemonRow"></div>
 <div class="page-container">
-      
-  <!-- Modal -->
+
+  <!-- Modal image and info -->
   <div class="modal fade" id="modal-container" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -50,7 +56,7 @@
         <script src="/js/promise-polyfill.js"></script>
         <script src="/js/fetch-polyfill.js"></script>
         <script src="/dist/minified-scripts.js"></script>
-        <!-- <script scr="/js/scripts.js"></script> -->
+        <!-- <script src="/js/scripts.js"></script> -->
     
   </div>
 </html>

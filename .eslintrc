@@ -8,7 +8,6 @@
   ],
   "rules": {
     "quotes": ["error", "single"]
-  },
-  "parser": "@babel/eslint-parser"
+  }
 
 }
