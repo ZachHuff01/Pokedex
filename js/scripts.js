@@ -1,9 +1,8 @@
 let pokemonRepository = (function () {
-  const pokemonList = []
-  const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-  
+  const pokemonList = [];
+  const apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
+
   async function loadList() {
-   
     try {
       const response = await fetch(apiUrl);
       const json = await response.json();
@@ -15,20 +14,18 @@ let pokemonRepository = (function () {
           detailsUrl: item.url,
         };
         add(pokemon);
-       
       });
-     } catch (e) {
+    } catch (e) {
       console.error(e);
-     }
-   
+    }
   }
-  
+
   function add(pokemon) {
     if (
       typeof pokemon === "object" &&
       "name" in pokemon &&
       "height" in pokemon &&
-      "weight" in pokemon 
+      "weight" in pokemon
     ) {
       pokemonList.push(pokemon);
     } else {
@@ -39,23 +36,25 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
-  function addListItem(pokemon){
+  function addListItem(pokemon) {
     let pokemonRow = document.getElementById("pokemonRow");
-    let pokemonCard = document.createElement("div")
+    let pokemonCard = document.createElement("div");
     let button = document.createElement("button");
-    pokemonCard.classList.add("col-lg-3", "col-md-4", "col-sm-6", "mb-3", "pokemon-card");
-    button.innerText = pokemon.name;
-    button.classList.add(
-      "btn",
-      "btn-primary",
-      "w-100"
+    pokemonCard.classList.add(
+      "col-lg-3",
+      "col-md-4",
+      "col-sm-6",
+      "mb-3",
+      "pokemon-card"
     );
-    button.setAttribute("data-target","#modal-container");
+    button.innerText = pokemon.name;
+    button.classList.add("btn", "btn-primary", "w-100");
+    button.setAttribute("data-target", "#modal-container");
     button.setAttribute("data-toggle", "modal");
     pokemonCard.appendChild(button);
-    pokemonRow.appendChild(pokemonCard)
-    button.addEventListener('click', () => {
-      showDetails(pokemon)
+    pokemonRow.appendChild(pokemonCard);
+    button.addEventListener("click", () => {
+      showDetails(pokemon);
     });
   }
 
@@ -68,9 +67,13 @@ let pokemonRepository = (function () {
       const modalClose = document.getElementById("modal-close");
 
       modalTitle.textContent = "Name: " + item.name;
-      modalHeight.textContent = "Height: " + (item.height * 0.328084).toFixed(2) + " ft"; // Convert height to ft
+      modalHeight.textContent =
+        "Height: " + (item.height * 0.328084).toFixed(2) + " ft"; // Convert height to ft
       modalHeight.style.marginTop = "10px"; // Add margin top
-      modalHeight.insertAdjacentHTML("beforeend", "<br>Weight: " + (item.weight * 0.220462).toFixed(2) + " lbs"); // Convert weight to lbs
+      modalHeight.insertAdjacentHTML(
+        "beforeend",
+        "<br>Weight: " + (item.weight * 0.220462).toFixed(2) + " lbs"
+      ); // Convert weight to lbs
 
       modalImage.setAttribute("src", item.imageUrl);
       modalImage.setAttribute("alt", item.name);
@@ -90,13 +93,12 @@ let pokemonRepository = (function () {
       const details = await response.json();
       // Now we add the details to the item
       pokemon.imageUrl = details.sprites.front_default;
-      pokemon.weight = details.weight,
-      pokemon.height = details.height;
+      (pokemon.weight = details.weight), (pokemon.height = details.height);
       pokemon.types = details.types;
-    }catch (e) {
+    } catch (e) {
       console.error(e);
     }
-    return(pokemon);
+    return pokemon;
   }
 
   return {
@@ -105,15 +107,13 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    showDetails: showDetails
-    
+    showDetails: showDetails,
   };
-
 })();
 
-pokemonRepository.loadList().then(function() {
+pokemonRepository.loadList().then(function () {
   // Now the data is loaded!
-  pokemonRepository.getAll().forEach(function(pokemon){
+  pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
 });

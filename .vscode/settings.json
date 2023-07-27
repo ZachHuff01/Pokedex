@@ -2,6 +2,8 @@
   "trailingComma": "es5",
   "tabWidth": 4,
   "semi": false,
-  "singleQuote": true
+  "singleQuote": true,
+  "vs-code-prettier-eslint.prettierLast": true,
+  "editor.formatOnSave": true
 }
 
