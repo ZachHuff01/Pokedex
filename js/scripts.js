@@ -42,8 +42,8 @@ let pokemonRepository = (function () {
     let button = document.createElement('button');
     pokemonCard.classList.add(
       'col-lg-4',
-      'col-md-4',
-      'col-sm-4',
+      'col-md-3',
+      'col-sm-2',
       'mb-3',
       'pokemon-card'
     );

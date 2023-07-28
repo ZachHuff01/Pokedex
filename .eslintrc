@@ -9,12 +9,9 @@
     "es6": true,
     "browser": true
   },
-  "extends": [
-    "eslint:recommended"
-  ],
+  // "extends": [
+  //   "eslint:recommended"
+  // ]
 
- "rules": {
-    "quotes": ["error", "single"]
-  }
-
+ 
 }
