@@ -14,6 +14,7 @@
       {
         "aria-required-parent": "off"
       }
-    ]
+    ],
+    "axe/language": "off"
   }
 }
