@@ -1,8 +1,63 @@
+header {
+    background-color: #0008fa;
+    color: #f7f4f4;
+}
+
+/* Navigation links styles */
+.nav-link-light {
+    color: #f1ecec;
+    text-decoration: none;
+}
+.nav-link-light:hover{
+    color: red;
+}
+
+
+
+/* Pokemon Row styles */
 #pokemonRow {
-    margin: 25px 50px 75px 100px
+    margin: 25px 50px 75px 100px;
 }
 
-#navbar-nav {
-    justify-content: center;
+/* Modal styles */
+.modal-content {
+    border-radius: 10px;
 }
 
+/* Modal title styles */
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Modal body styles */
+.modal-body {
+    text-align: center;
+}
+
+/* Modal image styles */
+.modal-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Modal close button styles */
+.modal-footer .btn-primary {
+    background-color: #2413df;
+    color: #fff;
+    border: none;
+}
+
+.modal-content {
+    background-color: lightgray;
+}
+
+.row {
+    background-color: rgb(255, 255, 255);
+    margin: 25px 50px 75px 100px;
+}
+
+.navbar-toggler {
+    background-color: #f1ecec;
+}

@@ -4,6 +4,7 @@
   "semi": false,
   "singleQuote": true,
   "vs-code-prettier-eslint.prettierLast": true,
-  "editor.formatOnSave": false
+  "editor.formatOnSave": false,
+  "liveServer.settings.port": 5501
 }
 
